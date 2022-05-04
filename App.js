@@ -3,7 +3,6 @@ import "./styles.css";
 
 export default function TodoApp() {
   const [task, setTask] = useState("");
-  const [taskDone, setTaskDone] = useState(false);
 
   const [tasklist, setTaskList] = useState([]);
 
@@ -49,7 +48,7 @@ export default function TodoApp() {
         id="task"
         placeholder="Add task here..."
         onChange={(e) => handleChange(e)}
-      />{" "}
+      />
       <button className="add-btn" onClick={AddTask}>
         Add
       </button>{" "}
@@ -58,7 +57,7 @@ export default function TodoApp() {
         <div><ul>
           {tasklist.map((t) => (
             <li className={t.isComplete ? "crossText" : "listitem"} key={t.id}>
-              {t.value}{" "}
+              {t.value}
               <button className="completed" onClick={(e) => extra(e, t.id)}>
                 completed
               </button>
@@ -69,7 +68,7 @@ export default function TodoApp() {
             
           ))}
         </ul></div>
-      ) : null}{" "}
+      ) : null}
       <br />
     </div>
     </>
